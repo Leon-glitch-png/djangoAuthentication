@@ -44,6 +44,5 @@ urlpatterns = [
         ),
         name="password_reset_complete",
     ),
-    path("debug-template/", views.debug_template, name="debug_template"),
     
 ]

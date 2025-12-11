@@ -61,11 +61,7 @@ def login_view(request):
     )
 
 
-# views_debug.py
 
-
-def debug_template(request):
-    return render(request, "registration/reset_done.html", {})
 
 
 
