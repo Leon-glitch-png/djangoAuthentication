@@ -24,8 +24,6 @@ source .venv/bin/activate
 # Install requirements
 pip install -r requirements.txt
 ```
-
-
 ---
 
 # 2. Features
@@ -49,7 +47,6 @@ DEBUG='True'
 
 
 # Database 
-# For MySQL / Docker see next section:
 DB_ENGINE='django.db.backends.mysql'
 DATABASE_NAME='mydb'
 MYSQL_USER='myuser'
