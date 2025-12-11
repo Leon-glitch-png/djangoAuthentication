@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+  
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+
+    
+    <nav class="navbar bg-white shadow-md border-b">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+
+           
+            <div class="flex items-center space-x-4">
+                <a href="{% url 'home' %}" class="text-xl font-semibold hover:text-blue-600 transition">
+                    Home
+                </a>
+            </div>
+
+           
+            <div>
+                {% if user.is_authenticated %}
+                    <form action="{% url 'logout' %}" method="post" class="inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-error btn-sm text-white px-5">
+                            Logout
+                        </button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'register' %}" class="btn btn-primary btn-sm px-5">
+                        Sign Up
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <div class="max-w-lg mx-auto bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+            {% if user.is_authenticated %}
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">
+                    Welcome, {{ user.username }}!
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    You are successfully logged in.
+                   
+                </p>
+
+                
+
+            {% else %}
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">
+                    You are not logged in.
+                </h2>
+                <p class="text-gray-600 text-lg mb-6">
+                    Please login to access your account.
+                </p>
+
+                <a href="{% url 'login' %}" class="btn btn-primary w-full text-white">
+                    Login
+                </a>
+            {% endif %}
+        </div>
+
+    </main>
+
+</body>
+</html>

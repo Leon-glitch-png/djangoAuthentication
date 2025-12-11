@@ -1,0 +1,53 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.so
+
+# === Django ===
+# Django secret keys, database configs, API keys
+.env
+.env.local
+*.env
+
+# Django SQLite database files
+db.sqlite3
+db.sqlite3-journal
+
+# Django generated files
+media/
+staticfiles/
+static_root/
+static/
+
+# Migrations (OPTIONAL)
+# Uncomment if you don't want to track migration files
+# */migrations/*.py
+# */migrations/*.pyc
+# !*/migrations/__init__.py
+
+# === Byte-compiled / cache ===
+*.log
+*.pot
+*.pyc
+*.mo
+
+# === Virtual Environments ===
+venv/
+.env/
+env/
+ENV/
+.venv/
+
+# === IDE / Editor ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+
+
+
